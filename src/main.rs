@@ -5,10 +5,15 @@ fn main() {
     println!("Please input your guess.");
 
     let mut guess = String::new();
-
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Fialed ti read line");
+    let answer = "Wizard";
+    let _ =io::stdin()
+        .read_line(&mut guess);
+        if guess.trim() == answer.to_string() {
+            println!("You win!");
+        } else {
+            println!("You lose! The answer is {answer}");
+        }
+        
     
-    println!("You guessed: {guess}");
+    println!("You guessed:{}", guess);
 }
